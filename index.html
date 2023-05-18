@@ -1,0 +1,103 @@
+<?php
+$dev = "Octopus ofc";
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Octopusofc - Home</title>
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- container -->
+    <div class="container">
+      <!-- header -->
+      <header>
+        <div class="brand">
+          <a href="#">
+            <span class="logo"></span>
+            <h2>octopus<sup>ofc</sup></h2>
+          </a>
+        </div>
+      </header>
+      <!-- navigasi -->
+      <nav>
+        <div class="sidebar">
+          <h2>octopus ofc</h2>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li>
+              <a href="#">Media Social</a>
+              <ul class="drop-down">
+                <li>
+                  <a href="https://youtube.com/@octopusofc" class="yt"
+                    >youtube</a
+                  >
+                </li>
+                <li><a href="#" class="ig">instagram</a></li>
+                <li><a href="https://www.tiktok.com/@octopusofc" class="tt">tiktok</a></li>
+              </ul>
+            </li>
+            <li>
+                <a href="#">Contact</a>
+                <ul class="drop-down">
+                    <li><a href="mailto:octopuss.ofc@gmail.com">e-mail</a>
+                    </li>
+                    <li><a href="#">whatsapp</a></li>
+                </ul>
+            </li>
+          </ul>
+          <button class="toggle-btn" onclick="toggleSidebar()">
+            <img
+              class="menu-btn"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAA+klEQVRoQ+1XQQrEIAxMj3ve/z+x5z3uEqggshiTSCQ6vZSik5iZ6NiLkj9X8vUTClitIBSAAk4G0EJOAt1wKOCm0BlgVIGXM48V/pGAIwV8iUgMJCUyjjNx3TVKBXCAm4hWKvDuEbh9Aax86hYqrVtaqFaMC+NvfpenVbSMlXktnnFtjHq7iHtPaiHj3ouDoYA4rv9nOkaBlT7QFXlEgdTHKJzYucnZB1xXiS2duHbeluCeq1rEgBNbWAvFjByjoQvSJjumADixtjWe+fgnTn+V2M6Jja1shsGJzdRFAY8xsihC1XmggJqyyQAoMJlQdTgooKZsMiC9Aj+7lywxNDTwiQAAAABJRU5ErkJggg=="
+            />
+          </button>
+        </div>
+        <div id="clock"></div>
+      </nav>
+      <!-- content -->
+      <div class="content">
+        <h1>Conquer Limits, Achieve Success!</h1>
+        <p><em>Taklukkan Batasan, Raih Kesuksesan!</em></p>
+        <br />
+        <p>new vidio today :</p>
+        <iframe
+          src="https://youtube.com/shorts/-SV7s9vpAZc?feature=share"
+        ></iframe>
+      </div>
+      <!-- footer -->
+    </div>
+    <script>
+      function toggleSidebar() {
+        var sidebar = document.querySelector(".sidebar");
+        var content = document.querySelector(".content");
+
+        sidebar.classList.toggle("active");
+        content.classList.toggle("active");
+      }
+
+      function updateTime() {
+        var now = new Date();
+        var hours = now.getHours();
+        var minutes = now.getMinutes();
+        var seconds = now.getSeconds();
+
+        hours = hours < 10 ? "0" + hours : hours;
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        var time = hours + ":" + minutes + ":" + seconds;
+
+        document.getElementById("clock").innerHTML = time;
+      }
+
+      setInterval(updateTime, 1000);
+    </script>
+  </body>
+</html>
